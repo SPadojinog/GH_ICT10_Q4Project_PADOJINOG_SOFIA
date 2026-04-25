@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classmates List</title>
+
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.3.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.3.1/core.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Chewy&family=Sour+Gummy:wght@400..700&display=swap" rel="stylesheet">
+
+<style>
+    body{
+        font-family:"Sour Gummy", cursive, sans-serif;
+        background-image:url(https://i.pinimg.com/1200x/13/90/de/1390de4302351c418452d92b6ee191a3.jpg);
+        background-size:cover;
+        background-position:center;
+        margin:0;
+        padding:0;
+    }
+
+    nav{
+        background:#4B352A;
+        padding:15px 20px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        color:#F8EEE7;
+        border-bottom:3px solid #C89A9E;
+    }
+
+    nav h2{
+        margin:0;
+        font-family:"Chango", cursive;
+        font-size:22px;
+    }
+
+    nav .links a{
+        color:#F8EEE7;
+        text-decoration:none;
+        margin-left:18px;
+        font-weight:bold;
+    }
+
+    nav .links a:hover{
+        color:#D9A8AD;
+    }
+
+    .banner{
+        background:rgba(78,52,38,0.90);
+        color:#F8EEE7;
+        padding:50px 20px;
+        text-align:center;
+        border-radius:0 0 25px 25px;
+        margin-bottom:30px;
+    }
+
+    .banner h1{
+        font-family:"Chewy", cursive;
+        font-size:42px;
+        color:#D9A8AD;
+    }
+
+    .menu-card{
+        background:rgba(78,52,38,0.94);
+        border-radius:25px;
+        padding:30px;
+        color:#F8EEE7;
+        border:2px solid #C89A9E;
+        box-shadow:0 10px 25px rgba(0,0,0,0.25);
+        height:100%;
+    }
+
+    .menu-card h3{
+        font-family:"Chewy", cursive;
+        color:#D9A8AD;
+    }
+
+    .form-control{
+        border-radius:12px;
+        border:2px solid #A98589;
+        background:#FCF8F5;
+    }
+
+    .form-control:focus{
+        border-color:#C89A9E;
+        box-shadow:none;
+    }
+
+    .btn{
+        background:#C89A9E;
+        color:white;
+        border:none;
+        border-radius:25px;
+        margin:4px;
+    }
+
+    .btn:hover{
+        background:#B27E84;
+        color:white;
+    }
+
+    .divider{
+        border-top:2px dashed #DAB9BC;
+        margin:20px 0;
+    }
+
+    #output{
+        background:#FCF8F5;
+        padding:15px;
+        border-radius:15px;
+        min-height:50px;
+        color:#4B352A;
+        border:2px solid #C89A9E;
+        line-height:1.6;
+    }
+
+    .next-tracker {
+        text-align: center;
+        margin: 40px 0 60px 0;
+    }
+
+    .next-tracker a {
+        background-color: #4B352A;
+        color: #F8EEE7;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .next-tracker a:hover {
+        background-color: #C89A9E;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }    
+
+    footer{
+        background:#4B352A;
+        color:#F8EEE7;
+        text-align:center;
+        padding:20px;
+        margin-top:50px;
+        border-top-left-radius:20px;
+        border-top-right-radius:20px;
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR: PADOJINOG -->
+    <nav>
+        <h2>10 - Sapphire</h2>
+        <div class="links">
+            <a href="index.html">Classmates</a>
+            <a href="tracker.html">Attendance Tracker</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- BANNER: PADOJINOG -->
+    <div class="banner">
+        <h1>Grade 10 Classmates System</h1>
+        <p>Add and view your classmates easily!</p>
+    </div>
+
+    <div class="container">
+    <div class="row g-4">
+
+        <!-- STUDENT INFORMATION:PADOJINOG-->
+        <div class="col-md-6">
+            <div class="menu-card">
+                <h3 class="text-center">Student Information</h3>
+                    <label class="fw-bold">Name</label>
+                    <input type="text" id="name" class="form-control mb-3" placeholder="Enter your full name">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="fw-bold">Section</label>
+                            <select id="section" class="form-control mb-3">
+                                <option value="">Select Section</option>
+                                <option value="Emerald">Emerald</option>
+                                <option value="Sapphire">Sapphire</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="Topaz">Topaz</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="fw-bold">Favorite Subject</label>
+                            <select id="subject" class="form-control mb-3">
+                                <option value="">Select Subject</option>
+                                <option value="English">English</option>
+                                <option value="Filipino">Filipino</option>
+                                <option value="Science">Science</option>
+                                <option value="Math">Math</option>
+                                <option value="Social Studies">Social Studies</option>
+                                <option value="Special Subjects">Special Subjects</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-6 d-grid">
+                            <button class="btn fw-bold py-2" py-click="insert_classmate">Add Classmate</button>
+                        </div>
+
+                        <div class="col-md-6 d-grid">
+                            <button class="btn fw-bold py-2" py-click="information"> Show List </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- RESULT: PADOJINOG -->
+        <div class="col-md-6">
+            <div class="menu-card">
+                <h3 class="text-center">Output</h3>
+                <div class="divider"></div>
+                <div id="output"></div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- NEXT TO TRACKER BUTTON: PADOJINOG -->
+    <div class="next-tracker">
+        <a href="tracker.html"> Go to Attendance Tracker →</a>
+    </div>
+
+    <!-- FOOTER: PADOJINOG -->
+    <footer> 
+        <p>🏫 GRADE 10 SAPPHIRE</p> 
+        <p>San Juan City, Greenhills | info@obmcgh10sapphire.edu.ph</p>
+        <p>JILLIAN C. GROSPE | 10 - SAPPHIRE | SOFIA LAURENCE F. PADOJINOG</p> 
+    </footer>
+
+    <py-script src="main.py"></py-script>
+
+</body>
+</html>

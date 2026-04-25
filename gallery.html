@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Gallery</title>
+
+<py-config>
+    packages = ['numpy','matplotlib']
+</py-config>
+
+<!-- PyScript -->
+<link rel="stylesheet" href="https://pyscript.net/releases/2026.3.1/core.css" />
+<script type="module" src="https://pyscript.net/releases/2026.3.1/core.js"></script>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Chango&family=Chewy&family=Sour+Gummy:wght@400..700&display=swap" rel="stylesheet">
+
+<style>
+    body{
+        font-family:"Sour Gummy", cursive, sans-serif;
+        background-image:url(https://i.pinimg.com/1200x/13/90/de/1390de4302351c418452d92b6ee191a3.jpg);
+        background-size:cover;
+        background-position:center;
+        margin:0;
+        padding:0;
+    }
+
+    nav{
+        background:#4B352A;
+        padding:15px 20px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        color:#F8EEE7;
+        border-bottom:3px solid #C89A9E;
+    }
+
+    nav h2{
+        margin:0;
+        font-family:"Chango", cursive;
+        font-size:22px;
+    }
+
+    nav .links a{
+        color:#F8EEE7;
+        text-decoration:none;
+        margin-left:18px;
+        font-weight:bold;
+    }
+
+    nav .links a:hover{
+        color:#D9A8AD;
+    }
+
+    .banner{
+        background:rgba(78,52,38,0.90);
+        color:#F8EEE7;
+        padding:50px 20px;
+        text-align:center;
+        border-radius:0 0 25px 25px;
+        margin-bottom:30px;
+    }
+
+    .banner h1{
+        font-family:"Chewy", cursive;
+        font-size:42px;
+        color:#D9A8AD;
+    }
+
+    .recipe-title-box{
+        background:#F0F0F0;
+        padding:12px;
+        border-radius:12px;
+        text-align:center;
+        box-shadow:4px 4px 10px rgba(0,0,0,0.2);
+        margin-bottom:20px;
+    }
+
+    .recipe-title-box img{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+        border-radius:10px;
+    }
+
+    .next-tracker{
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+    }
+
+    .next-tracker a{
+        background:#4B352A;
+        color:#F8EEE7;
+        padding:12px 28px;
+        border-radius:30px;
+        text-decoration:none;
+        font-weight:bold;
+        transition:0.3s;
+        display:inline-block;
+    }
+
+    .next-tracker a:hover{
+        background:#C89A9E;
+        color:white;
+    }
+
+    footer{
+        background:#4B352A;
+        color:#F8EEE7;
+        text-align:center;
+        padding:20px;
+        margin-top:50px;
+        border-top-left-radius:20px;
+        border-top-right-radius:20px;
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR: PADOJINOGS-->
+    <nav>
+        <h2>10 - Sapphire</h2>
+        <div class="links">
+            <a href="index.html">Classmates</a>
+            <a href="tracker.html">Attendance Tracker</a>
+            <a href="gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- BANNER: PADOJINOG -->
+    <div class="banner">
+        <h1>Our Class Highlights</h1>
+        <p>Photos of our activities 💖</p>
+    </div>
+
+    <!-- GALLERY: PADOJINOG -->
+    <div class="container">
+        <div id="gallery" class="row text-center"></div>
+    </div>
+
+    <!-- BACK TO ATTENDANCE TRACKER:PADOJINOG -->
+    <div class="next-tracker">
+        <a href="tracker.html"> ← Back to Attendance Tracker</a>
+    </div>
+
+    <!-- FOOTER: PADOJINOG -->
+    <footer> 
+        <p>🏫 GRADE 10 SAPPHIRE</p> 
+        <p>San Juan City, Greenhills | info@obmcgh10sapphire.edu.ph</p>
+        <p>JILLIAN C. GROSPE | 10 - SAPPHIRE | SOFIA LAURENCE F. PADOJINOG</p> 
+    </footer>
+
+    <py-script src="gallery.py"></py-script>
+
+</body>
+</html>
