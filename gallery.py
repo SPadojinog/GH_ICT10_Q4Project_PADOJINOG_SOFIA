@@ -7,7 +7,7 @@ gallery = document.getElementById("gallery")
 gallery.innerHTML = """
 <div class="col-md-3">
     <div class="recipe-title-box">
-        <img src="Intrams.jpg">
+        <img src="Intrams.JPG">
         <b>Intramurals</b><br>
         <small>3 Championships for Green Hornets!</small>
     </div>
